@@ -27,6 +27,6 @@ jobs:
         site:
           - staging
     steps:
-      - name: echo color
+      - name: echo matrix var
         run: |
           echo 'datacenter is ${{ matrix.datacenter }}, node-version is ${{ matrix.node-version }}, site is ${{matrix.site}}, php-version is ${{matrix.php-version}}'
