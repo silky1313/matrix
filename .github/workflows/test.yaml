@@ -1,0 +1,28 @@
+name: test matrix
+on:
+  push:
+
+jobs:
+  echo-color:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+        version: [12, 14]
+        include:
+          - color: green
+#        exclude:
+#          - os: macos-latest
+#            version: 12
+#          - os: windows-latest
+#            version: 14
+    steps:
+      - name: echo color
+        run: |
+          echo 'os is ${{ matrix.os }}, version is ${{ matrix.version }}, color is ${{matrix.color}}'
+# 发现一些bug
+# 按理来说应该是
+# macos-latest, 12, green
+# windows-latest, 12, green
+# macos-latest, 14, green
+# windows-latest, 14, green
