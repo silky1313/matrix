@@ -10,9 +10,9 @@ jobs:
         fruit: [apple, pear]
         animal: [cat, dog]
         include:
-          - color: green
           - color: pink
             animal: cat
+          - color: green
           - fruit: apple
             shape: circle
           - fruit: banana
